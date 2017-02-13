@@ -29,17 +29,14 @@ public class Rectangle {
         this.height = 0;
     }
     
-    public void initialize1(int left, int top) {
+    public void initialize(int left, int top, int width) {
         this.left = left;
         this.top = top;
         this.height = width;
-        this.width = height; 
+        this.width = width; 
     }
     
     public void initialize(Rectangle anotherRectangle) {
-        this.left = anotherRectangle.left;
-        this.top = anotherRectangle.top;
-        this.width = anotherRectangle.width;
-        this.height = anotherRectangle.height;
+        anotherRectangle = this;
     }
 }
