@@ -1,0 +1,36 @@
+/*
+Среднее арифметическое
+Вводить с клавиатуры числа и вычислить среднее арифметическое.
+Если пользователь ввел -1, вывести на экран среднее арифметическое всех чисел и завершить программу.
+-1 не должно учитываться.
+*/
+
+package com.javarush.task.task05.task0507;
+
+import java.io.*;
+
+public class Avg1 {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader (new InputStreamReader(System.in));
+        double sum = 0;
+        double avg = 0;
+        int count = 0;
+        double a = 0;
+        while(true) {
+            a = Double.parseDouble(reader.readLine());
+            count++;
+            sum += a;
+            avg = sum / count;
+            if (a == -1) {
+                count--;
+                sum = sum + 1;
+                avg = sum / count;
+                break;
+            }
+        }
+        
+        System.out.println(avg);
+        System.out.println(sum);
+        System.out.println(count);
+    }
+}
