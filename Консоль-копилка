@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Kopilka {
+public static void main(String[] args) {
+  String inputString;
+  int inputNumber;
+  
+  int sum = 0;
+  Scanner scanner = new Scanner(System.in);
+  
+  do{
+   System.out.println("Enter a number: ");
+   inputString = scanner.nextLine();
+   
+   if (inputString.matches("[0-9]+")){
+    inputNumber = Integer.parseInt(inputString);
+    sum += inputNumber;
+   }
+   
+  } while(!inputString.equals("сумма"));
+   
+  System.out.println("This is sum: " + sum);
+  
+  scanner.close();
+}
