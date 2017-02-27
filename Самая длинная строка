@@ -1,0 +1,44 @@
+/*
+Самая длинная строка
+1. Создай список строк.
+2. Считай с клавиатуры 5 строк и добавь в список.
+3. Используя цикл, найди самую длинную строку в списке.
+4. Выведи найденную строку на экран.
+5. Если таких строк несколько, выведи каждую с новой строки.
+*/
+
+package com.javarush.task.task07.task0708;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+/* 
+Самая длинная строка
+*/
+
+public class Solution {
+	public static void main(String[] args) throws Exception {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		ArrayList<String> list = new ArrayList<String>();
+		
+//		заполняем список строками
+		for (int i = 0; i < 5; i++) {
+			String s = reader.readLine();
+			list.add(s);
+		}
+//		максимум = первый элемент списка, если длина i-го элемента больше максимального - переназначение
+		String maxLen = list.get(0);
+		for (int i = 1; i < 5; i++) {
+			if (maxLen.length() < list.get(i).length()) {
+				maxLen = list.get(i);
+			}
+		}
+		
+		for (int i = 0; i < list.size(); i++) {
+			if (maxLen.length() == list.get(i).length()) {
+				System.out.println(list.get(i));
+			}
+		}
+	}
+}
